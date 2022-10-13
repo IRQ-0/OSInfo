@@ -3,7 +3,7 @@ Run `make.bat` file.
 Wait for it to complete.
 
 # Usage
-Run `osinfo.exe` with fallowing parameters:\
+Run `osinfo.exe` with fallowing parameters:
 
 `without args = display everything once`\
 Just show information about OS and hardware.\
