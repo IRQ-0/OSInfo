@@ -14,7 +14,7 @@ osinfo [args]
 -without args = display everything once
 -h = help
 -r <milisecconds> = refresh cpu and mem info every number of milliseconds specified in parameter
--o <filename> = put output to file
+-o <filename> = put output to file	
 -csv = (available only with -o option) set output format to csv
 -t = (available only with -o and -r option) add time stamp (default off)
 -g = show graph of cpu usage
@@ -133,6 +133,8 @@ void displayMemCpuRef(FILE* out, params p) {
 			fputs("CPU Usage, Virtual mem usage, Physical mem usage\r\n", out);
 	}
 	
+	fputs("\n\n\n", out);
+	
 	while (1) {
 		if (p.outputFile && p.csvFormat) {
 			if (p.timeStamp) {
@@ -146,6 +148,10 @@ void displayMemCpuRef(FILE* out, params p) {
 			getUsedPhysicalMemoryInProc();
 			fputs("\n", out);
 		} else {
+			printf("\033[A\33[2K\r");
+			printf("\033[A\33[2K\r");
+			printf("\033[A\33[2K\r");
+			
 			fprintf(out, "Virtual memory usage:  ");
 			getUsedVirtualMemory();
 			fprintf(out, " out of " );
@@ -162,11 +168,9 @@ void displayMemCpuRef(FILE* out, params p) {
 			getCpuUsage();
 			fprintf(out, "\n");
 			fflush(out);
-			
-			printf("\033[A\33[2KT\r");
-			printf("\033[A\33[2KT\r");
-			printf("\033[A\33[2KT\r");
+
 		}
+		
 		Sleep(p.milis);
 	}
 }
