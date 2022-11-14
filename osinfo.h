@@ -29,7 +29,7 @@ void getBiosVersion(void);
 void getCpuMhz(void);
 void getCpuName(void);
 void getCpuType(void);
-void getCpuCores(void);
+void getCpuThreads();;
 void getCpuRevision(void); // TODO: add proper print
 void getCpuUsage(void); // without new line
 

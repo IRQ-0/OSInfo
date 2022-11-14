@@ -137,7 +137,7 @@ void getMinimumAllocationAdrress(void) {
 	fprintf(out, "0x%.X\n", sysinfo.lpMinimumApplicationAddress);
 }
 
-void getCpuCores(void) {
+void getCpuThreads(void) {
 	SYSTEM_INFO sysinfo = getSysBasicInfo();
 	fprintf(out, "%d\n", sysinfo.dwNumberOfProcessors);
 }

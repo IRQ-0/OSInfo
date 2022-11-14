@@ -97,7 +97,7 @@ void initGraph(void) {
 		puts("");
 		printf("  %d%%  \n", i);
 	}
-	puts("\n\n  Press CTRL+Z to stop");
+	puts("\n\n  Press CTRL+C to stop");
 	clear();
 	
 }

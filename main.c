@@ -139,12 +139,12 @@ void displayMemCpuRef(FILE* out, params p) {
 		if (p.outputFile && p.csvFormat) {
 			if (p.timeStamp) {
 				getTime(out);
-				fputc(',', out);
+				fputc(';', out);
 			}
 			getCpuUsage();
-			fputc(',', out);
+			fputc(';', out);
 			getUsedVirtualMemoryInProc();
-			fputc(',', out);
+			fputc(';', out);
 			getUsedPhysicalMemoryInProc();
 			fputs("\n", out);
 		} else {
@@ -203,8 +203,8 @@ void displayEverything(FILE* out) {
 	getCpuName();
 	fprintf(out, "- Cpu type: ");
 	getCpuType();
-	fprintf(out, "- Cpu cores: ");
-	getCpuCores();
+	fprintf(out, "- Cpu threads: ");
+	getCpuThreads();
 	fprintf(out, "- Cpu revision (this is no proper value, it will be fixed soon): ");
 	getCpuRevision();
 	fprintf(out, "- Cpu usage: ");
